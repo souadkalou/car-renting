@@ -2,6 +2,8 @@ package main
 
 import (
 	"car-rent/internal/handler" // Update import path
+	"car-rent/internal/model/car"
+	"car-rent/internal/repository/memory"
 	"fmt"
 )
 
@@ -20,17 +22,18 @@ import (
 
 func main() {
 	//mainChaincode()
-	handler := handler.StudentHandler{
+	handler := handler.CarHandler{
 		RepoContract: *memory.New(),
 	}
 	err := handler.RegisterCar(nil, "abc111", "brandtest", "modeltest", 2022)
 	if err != nil {
 		panic(err)
 	}
-	car, err := handler.GetCar(nil, "abc111")
+	var car *car.Car
+	car, err = handler.GetCar(nil, "abc111")
 	if err != nil {
 		panic(err)
 
 	}
-	fmt.Printf("Car %#v\n", car)
+	fmt.Printf("Car %#v\n", car)
 }

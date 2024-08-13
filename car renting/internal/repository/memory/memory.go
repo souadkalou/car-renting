@@ -37,6 +37,6 @@ func (rm *RepoMemory) GetAllCars(_ contractapi.TransactionContextInterface) ([]*
 }
 
 func (rm *RepoMemory) PutCar(_ contractapi.TransactionContextInterface, car *car.Car) error {
-	(*rm)[car.plateNo] = car
+	(*rm)[car.PlateNo] = car
 	return nil
 }

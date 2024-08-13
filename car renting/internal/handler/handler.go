@@ -1,8 +1,10 @@
 package handler
 
 import (
-	"car-rent/internal/model/car"
 	"fmt"
+
+	"car-rent/internal/model/car"
+	"car-rent/internal/repository/memory"
 
 	"github.com/hyperledger/fabric-contract-api-go/contractapi"
 )

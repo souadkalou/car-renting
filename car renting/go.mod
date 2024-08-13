@@ -1,4 +1,4 @@
-module carrenting
+module car-rent
 
 go 1.22.5
 
